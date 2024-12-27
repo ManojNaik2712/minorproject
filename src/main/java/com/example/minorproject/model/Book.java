@@ -24,6 +24,8 @@ public class Book {
 
     private String name;
 
+    private int cost;
+
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
 
@@ -43,7 +45,5 @@ public class Book {
 
     @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
     private List<Transaction> transactionList;
-
-
 
 }
