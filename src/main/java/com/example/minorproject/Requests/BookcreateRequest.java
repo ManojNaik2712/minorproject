@@ -28,7 +28,7 @@ public class BookcreateRequest {
     private Author author;
 
     public Book tobook(){
-        return Book.builder().name(name).cost(cost).genre(genre).author(author).build();
+        return Book.builder().name(name).cost(cost).genre(genre).author(this.author).build();
     }
 
 }

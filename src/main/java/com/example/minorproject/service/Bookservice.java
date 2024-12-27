@@ -20,9 +20,10 @@ public class Bookservice {
     public Book savebook(BookcreateRequest bookCreateRequest) {
         Book book=bookCreateRequest.tobook();
         Author author=book.getAuthor();
+
         Author authorfromdb= authorInterface.findByEmail(author.getEmail());
 
-        if(authorfromdb==null){
+        if(authorfromdb== null ){
             authorfromdb=authorInterface.save(author);
         }
         book.setAuthor(authorfromdb);
