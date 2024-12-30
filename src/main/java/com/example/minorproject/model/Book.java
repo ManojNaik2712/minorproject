@@ -1,6 +1,7 @@
 package com.example.minorproject.model;
 
 import com.example.minorproject.enums.Genre;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,6 +42,7 @@ public class Book {
 
     @ManyToOne
     @JoinColumn
+    @JsonIgnoreProperties({"bookList"})
     private Author author;
 
     @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)

@@ -5,8 +5,8 @@ spring:
     password: manoj08387
 
   jpa:
-    hibernate.ddl-auto: create
+    hibernate.ddl-auto: update
     show-sql: true
 
 server:
-  port: 8080
+  port: 9090

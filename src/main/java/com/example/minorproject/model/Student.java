@@ -2,6 +2,7 @@ package com.example.minorproject.model;
 
 import com.example.minorproject.enums.Accountstatus;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,5 +1,6 @@
 package com.example.minorproject.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
@@ -29,7 +30,7 @@ public class Author {
     @Min(value = 18)
     private int age;
 
-    @Column(unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     private String email;
 
     @CreationTimestamp
@@ -39,6 +40,7 @@ public class Author {
     private Date updatedon;
 
     @OneToMany(mappedBy = "author", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"author"})
     private List<Book> bookList;
 
 
