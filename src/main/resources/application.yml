@@ -8,5 +8,9 @@ spring:
     hibernate.ddl-auto: update
     show-sql: true
 
+book:
+  return:
+    max:
+      allowedDays: 10
 server:
   port: 9090

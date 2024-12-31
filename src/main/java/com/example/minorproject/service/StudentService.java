@@ -7,6 +7,8 @@ import com.example.minorproject.repository.StudentRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class StudentService{
     @Autowired
@@ -36,5 +38,9 @@ public class StudentService{
     public String delete(int id) {
         studentRepositoryInterface.deleteById(id);
         return "student details are deleted succesfully";
+    }
+
+    public Optional<Student> findStudent(int studentId) {
+        return studentRepositoryInterface.findById(studentId);
     }
 }
