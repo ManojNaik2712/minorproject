@@ -80,7 +80,8 @@ public class TransactionService {
                 throw new TransacctionException("book is not issued to this student");
             }
 
-            Transaction issuedTransaction=transactionRepositoryInterface.findTopByBookAndStudentAndTransactionTypeOrderByIdDesc(book.get(),student.get(),TransactionType.ISSUE);
+            Transaction issuedTransaction=transactionRepositoryInterface
+                    .findTopByBookAndStudentAndTransactionTypeOrderByIdDesc(book.get(),student.get(),TransactionType.ISSUE);
             double fine=CalculateFine(issuedTransaction);
             Transaction transaction=Transaction.builder()
                     .externalId(UUID.randomUUID().toString())
